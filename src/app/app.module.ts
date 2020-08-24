@@ -5,13 +5,28 @@ import { AppComponent } from './app.component';
 //Importação e referência ao HeaderComponent
 import { HeaderComponent } from './components/header/header.component';
 
+import { FormsModule } from '@angular/forms';
+import { CaixaDeEntradaComponent } from './modules/caixa-de-entrada/caixa-de-entrada.component';
+import { LoginComponent } from './modules/login/login.component'
+import { CadastroComponent } from './modules/cadastro/cadastro.component';
+import { ModuloRoteamento } from './app.routes';
+import { CmailFormGroupComponent } from './components/cmail-form-group/cmail-form-group.component';
+import { CmailFormFieldDirective } from './components/cmail-form-group/cmail-form-field.directive';  //Importação da referência
+
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    CaixaDeEntradaComponent,
+    LoginComponent,
+    CadastroComponent,
+    CmailFormGroupComponent,
+    CmailFormFieldDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ModuloRoteamento  //Módulo de Roteamento aqui!
   ],
   providers: [],
   bootstrap: [AppComponent]
