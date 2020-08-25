@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 //Importação e referência ao HeaderComponent
 import { HeaderComponent } from './components/header/header.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CaixaDeEntradaComponent } from './modules/caixa-de-entrada/caixa-de-entrada.component';
 import { LoginComponent } from './modules/login/login.component'
 import { CadastroComponent } from './modules/cadastro/cadastro.component';
@@ -26,7 +26,8 @@ import { CmailFormFieldDirective } from './components/cmail-form-group/cmail-for
   imports: [
     BrowserModule,
     FormsModule,
-    ModuloRoteamento  //Módulo de Roteamento aqui!
+    ModuloRoteamento,  //Módulo de Roteamento aqui!
+    ReactiveFormsModule //Importado aqui!
   ],
   providers: [],
   bootstrap: [AppComponent]
