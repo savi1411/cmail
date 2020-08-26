@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 //Importação e referência ao HeaderComponent
@@ -27,7 +28,8 @@ import { CmailFormFieldDirective } from './components/cmail-form-group/cmail-for
     BrowserModule,
     FormsModule,
     ModuloRoteamento,  //Módulo de Roteamento aqui!
-    ReactiveFormsModule //Importado aqui!
+    ReactiveFormsModule, //Importado aqui!
+    HttpClientModule // Importamos HttpClientModule!
   ],
   providers: [],
   bootstrap: [AppComponent]
