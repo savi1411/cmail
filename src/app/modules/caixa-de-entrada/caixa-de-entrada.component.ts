@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { EmailService } from 'src/app/services/email.service';
+import { EmailService } from '../../services/email.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({

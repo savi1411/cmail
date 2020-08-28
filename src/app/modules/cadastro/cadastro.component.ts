@@ -3,8 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient, HttpResponseBase, HttpErrorResponse } from '@angular/common/http';
 import { map, catchError } from "rxjs/operators";
 import { Router } from '@angular/router';
-import { User } from 'src/app/models/user';
-import { environment } from 'src/environments/environment';
+import { User } from '../../models/user';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-cadastro',

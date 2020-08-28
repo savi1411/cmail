@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CadastroComponent } from './cadastro.component';
-import { SharedComponentModule } from 'src/app/components/shared-components.module';
-import { CadastroRoutingModule } from './cadastro-routing.module'
+import { CadastroRoutingModule } from './cadastro-routing.module';
+import { SharedComponentModule } from '../../components/shared-components.module';
 
 @NgModule({
   declarations: [CadastroComponent],
