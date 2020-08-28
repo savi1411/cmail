@@ -7,7 +7,8 @@
                         <h1 class="mdl-card__title-text">Bem vindos/as ao CMail!</h1>
                     </header>
 
-                    <form (ngSubmit)="handleLogin(formLogin)" #formLogin="ngForm" autocomplete="off" class="mdl-card__supporting-text">
+                    <form (ngSubmit)="handleLogin(formLogin)" #formLogin="ngForm" autocomplete="off"
+                        class="mdl-card__supporting-text">
 
                         <!-- aqui os campos do formulário -->
                         <cmail-form-group [campo]="email">
@@ -24,6 +25,12 @@
                                 Informar uma senha é obrigatória!
                             </span>
                         </cmail-form-group>
+
+                        <section *ngIf="mensagemErro" class="mdl-textfield is-invalid">
+                            <p class="mdl-textfield__error">
+                                {{mensagemErro.message}}
+                            </p>
+                        </section>
 
                         <div class="mdl-card__actions mdl-card--border">
                             <a routerLink="/cadastro"

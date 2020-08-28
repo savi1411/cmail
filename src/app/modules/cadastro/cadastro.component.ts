@@ -4,6 +4,7 @@ import { HttpClient, HttpResponseBase, HttpErrorResponse } from '@angular/common
 import { map, catchError } from "rxjs/operators";
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-cadastro',
@@ -30,9 +31,13 @@ export class CadastroComponent implements OnInit {
 
   handleCadastrarUsuario() {
     if (this.formCadastro.valid) {
+
       const userData = new User(this.formCadastro.value);
+      // Cap. 41.2 - Exercício 5. Extra
+      const apiUrl = `${environment.apiUrl}users/`
+
       this.httpClient
-        .post('http://localhost:3200/users', userData)
+        .post(apiUrl, userData)
         .subscribe(
           () => {
             console.log(`Cadastrado com sucesso`);
