@@ -12,12 +12,13 @@
             <cmail-list-item></cmail-list-item>
           </li> -->
           <!-- fim Exercício 3 -->
-          <li *ngFor="let email of emailList">
-            <cmail-list-item
-              [destinatario]="email.destinatario"
-              [assunto]="email.assunto"
-              [introducaoDoConteudo]="email.introducaoDoConteudo"
-              [dataDeEnvio]="email.dataDeEnvio">
+          <!-- Método anterior com pipe -->
+          <!-- <li *ngFor="let email of emailList | filtroPorAssunto:termoParaFiltro"> -->
+          <li *ngFor="let email of filtrarEmailsPorAssunto()">
+            <cmail-list-item [destinatario]="email.destinatario" [assunto]="email.assunto"
+              [introducaoDoConteudo]="email.introducaoDoConteudo" [dataDeEnvio]="email.dataDeEnvio"
+              (eventoVaiRemover)="handleRemoveEmail($event, email.id)">
+              <!-- id como segundo parâmetro -->
             </cmail-list-item>
             <!-- <strong>Para:</strong>{{email.destinatario}} <br>
             <strong>Assunto:</strong>{{email.assunto}} -->

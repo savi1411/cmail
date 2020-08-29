@@ -6,10 +6,12 @@ import { SharedComponentModule } from '../../components/shared-components.module
 import { CaixaDeEntradaRoutingModule } from './caixa-de-entrada-routing.module'
 import { EmailService } from '../../services/email.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FiltroPorAssunto } from './filtro-por-assunto.pipe';
 
 @NgModule({
   declarations: [
-    CaixaDeEntradaComponent
+    CaixaDeEntradaComponent,
+    FiltroPorAssunto
   ],
   imports: [
     CommonModule,
