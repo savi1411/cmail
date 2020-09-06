@@ -41,7 +41,7 @@ export class CaixaDeEntradaComponent {
   private _isNewEmailFormOpen = false;
 
   // Cap. 41.2 - Exercício 4. Extra
-  mensagemErro: any;
+  mensagemErro: string;
 
   emailList = [];
   email = {
@@ -72,8 +72,14 @@ export class CaixaDeEntradaComponent {
           formEmail.reset();
         }
         // Cap. 41.2 - Exercício 4. Extra
-        , (responseError: HttpErrorResponse) => this.mensagemErro = responseError.error
-      )
+        , (responseError: HttpErrorResponse) => {
+          this.mensagemErro = ''
+          if (responseError.status === 400)
+            this.mensagemErro = "Email não encontrado"
+          else {
+            this.mensagemErro = "Ocorreu um erro inesperado"
+          }
+        })
   }
 
   handleRemoveEmail(eventoVaiRemover, emailId) {
@@ -87,9 +93,15 @@ export class CaixaDeEntradaComponent {
             console.log(res);
             //remove o email da lista de emails depois dela ser apagada da API
             this.emailList = this.emailList.filter(email => email.id != emailId);
-          }
-          , err => console.error(err)
-        )
+          },
+          (responseError: HttpErrorResponse) => {
+            this.mensagemErro = ''
+            if (responseError.status === 404)
+              this.mensagemErro = "Email não encontrado"
+            else {
+              this.mensagemErro = "Ocorreu um erro inesperado"
+            }
+          })
     }
   }
 

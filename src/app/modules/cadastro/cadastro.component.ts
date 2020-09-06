@@ -54,7 +54,13 @@ export class CadastroComponent implements OnInit {
           }
           , (responseError: HttpErrorResponse) => {
             //resposta caso existam erros!
-            this.mensagensErro = responseError.error.body
+            if (responseError.status === 400)
+              this.mensagensErro = responseError.error.body
+            else {
+              this.mensagensErro = [
+                {message: "Erro inesperado", value: "Falha na resposta do servidor"}
+              ]
+            }
           }
         )
     }

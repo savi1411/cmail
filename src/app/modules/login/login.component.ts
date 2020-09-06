@@ -13,7 +13,7 @@ import { PageDataService } from '../../services/page-data.service';
 
 export class LoginComponent implements OnInit {
 
-  mensagemErro: any;
+  mensagemErro: string;
   login = {
     email: '',
     password: ''
@@ -33,8 +33,15 @@ export class LoginComponent implements OnInit {
         .logar(this.login)
         .subscribe(
           () => this.roteador.navigate(['/inbox'])
-          , (responseError: HttpErrorResponse) => this.mensagemErro = responseError.error
-        )
+          ,
+          (responseError: HttpErrorResponse) => {
+            this.mensagemErro = ''
+            if (responseError.status === 400)
+              this.mensagemErro = "Usuário não encontrado"
+            else {
+              this.mensagemErro = "Ocorreu um erro inesperado"
+            }
+          })
     }
   }
 }
