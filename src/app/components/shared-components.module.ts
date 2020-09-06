@@ -15,6 +15,7 @@ import { CmailListItemComponent } from './cmail-list-item/cmail-list-item.compon
   ],
   imports: [
     CommonModule,
+    // Essencial após refactor de rotas
     RouterModule,
   ],
   exports: [

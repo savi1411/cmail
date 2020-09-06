@@ -39,16 +39,17 @@
   </header>
 
   <nav class="mdl-navigation">
-    <a routerLink="/login" class="mdl-navigation__link">
+    <!-- Cap. rotas 33 - Sintaxe para ex. de subroteamento de rotas filhas -->
+    <a [routerLink]="['/login']" class="mdl-navigation__link">
       <span class="material-icons">person</span> Login
     </a>
-    <a routerLink="/cadastro" routerLinkActive="mdl-navigation__link--current" class="mdl-navigation__link">
+    <a [routerLink]="['/cadastro']" routerLinkActive="mdl-navigation__link--current" class="mdl-navigation__link">
       <span class="material-icons">create</span> Cadastro
     </a>
-    <a routerLink="/inbox" routerLinkActive="mdl-navigation__link--current" class="mdl-navigation__link">
+    <a [routerLink]="['/inbox']" routerLinkActive="mdl-navigation__link--current" class="mdl-navigation__link">
       <span class="material-icons">inbox</span> Caixa de Entrada
     </a>
-    <a routerLink="/logout" class="mdl-navigation__link">
+    <a [routerLink]="['/logout']" class="mdl-navigation__link">
       <span class="material-icons">logout</span> Logout
     </a>
   </nav>
